@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>直播</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="full-screen" content="yes" />
+    <link rel="stylesheet" id="css" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+</head>
+
+<body>
+    <div style="width: 60%;margin: 10px auto;border: 1px solid #eee;padding: 10px;">
+        <div class="mytree">
+        </div>
+
+
+
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/tree.js"></script>
+        <script>
+            /*type类型7种： text:文字区块, img-single:單一圖片區塊, img-text:图文组合, catalog：型录, movie:影片, sound:音讯, file:档案*/
+            var josnData = {
+                id: "1",
+                name: '我是文字',
+                type: 'text',
+                children: [{
+                    id: "2",
+                    name: '我是电影',
+                    type: 'movie',
+                    children: [{
+                        id: "3",
+                        name: '我是文件',
+                        type: 'file',
+                        children: [{
+                            id: "3-1",
+                            name: "我是音频",
+                            type: "sound",
+                            children: [{
+                                id: "3-1-1",
+                                type: "img-single",
+                                name: "我是个单一图片",
+                                children: [{
+                                    id: "3-1-1-1",
+                                    type: "movie",
+                                    name: "我是个视频视频",
+                                    children: [{
+                                        id: "3-1-1-1-1",
+                                        type: "img-single",
+                                        name: "我是个单一图片",
+                                    }]
+                                }]
+                            }, {
+                                id: "3-1-2",
+                                type: "img-text",
+                                name: "我是个图文组合"
+                            }, {
+                                id: "3-1-3",
+                                type: "img-text",
+                                name: "我是个图文组合2"
+                            }]
+                        }]
+                    }, {
+                        id: "4",
+                        name: '我是型录',
+                        type: 'catalog'
+                    }]
+                }, {
+                    id: "5",
+                    name: '我是电影',
+                    type: 'movie',
+                    children: [{
+                        id: "5-1",
+                        name: '我是文件',
+                        type: 'file',
+                        children: [{
+                            id: "5-1-1",
+                            name: '我是图片',
+                            type: 'img-single',
+                            children: [{
+                                id: "5-1-1-1",
+                                name: '我是文字',
+                                type: 'text',
+                                children: [{
+                                    id: "5-1-1-1-1",
+                                    name: '我是视频文件我是视频文件',
+                                    type: 'movie',
+                                }, {
+                                    id: "5-1-1-1-2",
+                                    name: '我是视频文件我是视频文件222222',
+                                    type: 'movie',
+                                }, {
+                                    id: "5-1-1-1-3",
+                                    name: '我是视频文件我是视频文件3333333333333',
+                                    type: 'movie',
+                                    children: [{
+                                        id: "5-1-1-1-3-1",
+                                        name: '我是型录文件1111111111111111111111111111111111111333333333333333333333333333333333333333333333333',
+                                        type: 'catalog',
+                                        children: [{
+                                            id: "5-1-1-1-4-1",
+                                            name: '我是型录文件1111111111111111111111111111111111111333333333333333333333333333333333333333333333333',
+                                            type: 'catalog',
+                                        }, {
+                                            id: "5-1-1-1-4-2",
+                                            name: '我是型录文件1111111111111111111111111111111111111333333333333333333333333333333333333333333333333',
+                                            type: 'catalog',
+                                        }]
+                                    }]
+                                }, {
+                                    id: "5-1-1-1-4",
+                                    name: '我是视频文件我是视频文件444444444',
+                                    type: 'movie',
+                                }]
+                            }, {
+                                id: "5-1-1-2",
+                                name: '我是文件',
+                                type: 'file',
+                            }]
+                        }]
+                    }, {
+
+                        id: "5-2",
+                        name: '我是文件',
+                        type: 'file',
+
+                    }]
+                }]
+            };
+            $(function() {
+                $(".mytree").mytree({
+                    data: josnData, //数据
+                    isexpand: true, //节点是否全部展开或关闭，默认flase.
+                    onEdit: myEdit, //编辑函数
+                    onFlow: myFlow, //添加流程
+                    onAct: myAct, //添加动作
+                    onDel: myDel, //删除
+                });
+                /*
+                @id: 当前操作id
+                @type:当前类型
+                */
+                function myEdit(id, type) {
+                    console.log(id);
+                    console.log(type);
+                }
+
+                function myFlow(id, type) {
+                    console.log(id);
+                    console.log(type);
+                }
+
+                function myAct(id, type) {
+                    console.log(id);
+                    console.log(type);
+                }
+
+                function myDel(id, type) {
+                    console.log(id);
+                    console.log(type);
+                }
+
+            });
+        </script>
+
+</body>
+
+</html>
+</head>
+
+</html>

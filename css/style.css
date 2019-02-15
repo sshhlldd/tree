@@ -1,0 +1,317 @@
+/*reset*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+iframe,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  position: relative;
+}
+
+img {
+  vertical-align: top;
+}
+
+body {
+  line-height: 1;
+  background: #060708;
+  overflow-x: hidden;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+:focus {
+  outline: 1;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+.f_l {
+  float: left;
+}
+
+.f_r {
+  float: right;
+}
+
+.new-tree {
+  text-align: center;
+}
+
+.new-tree a {
+  display: inline-block;
+  background: #68adde !important;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #75b5e6), to(#5ba4d5)) !important;
+  background-image: linear-gradient(to bottom, #75b5e6 0, #5ba4d5 100%) !important;
+  background-repeat: repeat-x !important;
+  width: 80px;
+  font-size: 16px;
+  line-height: 1.5;
+  border: none;
+  padding: 12px 0 8px;
+  margin: 2px;
+  position: relative;
+  text-align: center;
+}
+
+.new-tree a i {
+  display: block;
+  font-size: 32px;
+  line-height: 30px;
+  margin: 0 0 3px;
+}
+
+.tree-con {
+  position: relative;
+  font-size: 14px;
+}
+
+.tree-con .tree {
+  overflow-x: auto;
+  overflow-y: hidden;
+  color: #545454;
+}
+
+.tree-con .tree .tree-item {
+  /* white-space: nowrap;
+            outline: none; */
+}
+
+.tree-con .tree .tree-item .tree-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 26px;
+  cursor: pointer;
+}
+
+.tree-con .tree .tree-item .tree-content:hover {
+  background-color: #e9f4f3;
+}
+
+.tree-con .tree .tree-item .tree-content .action-buttons {
+  background: #fff;
+  height: 26px;
+  position: absolute;
+  left: 500;
+  top: 0;
+  z-index: 1;
+  width: 100px;
+}
+
+.tree-con .tree .tree-item .tree-content .action-buttons .disabled {
+  cursor: not-allowed;
+  color: #999;
+}
+
+.tree-con .tree .tree-item .tree-content .action-buttons .disabled:hover {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.tree-con .tree .tree-item .tree-content .action-buttons a {
+  margin: 0 1px;
+  height: 26px;
+  width: 18px;
+  text-align: center;
+  line-height: 26px;
+  display: inline-block;
+  opacity: 0.85;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.tree-con .tree .tree-item .tree-content .action-buttons a:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.tree-con .tree .tree-item .tree-name {
+  font-size: 14px;
+  white-space: nowrap;
+  display: inline-block;
+  padding-right: 113px;
+}
+
+.tree-con .tree .file-icon {
+  width: 20px;
+  text-align: center;
+  color: #478fca;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.tree-con .tree font {
+  vertical-align: middle;
+}
+
+.tree-con .tree .expand-icon {
+  padding: 6px;
+  cursor: pointer;
+  color: #c0c4cc;
+  font-size: 12px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.tree-con .tree .expanded {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.tree-con .tree .is-leaf {
+  color: transparent;
+  cursor: default;
+}
+
+.tree-con .tree-act {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.tree-con .tree-act li {
+  height: 26px;
+  line-height: 26px;
+}
+
+.tree-con .blue {
+  color: #478fca;
+}
+
+.tree-con .green {
+  color: #69aa46;
+}
+
+.tree-con .red {
+  color: #dd5a43;
+}
+
+.tree-con .orange {
+  color: #ffb752;
+}
+/*# sourceMappingURL=style.css.map */
